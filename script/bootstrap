@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+docker build -t bsnode - <<EOF
+FROM node:lts
+RUN yarn global add bs-platform
+ENTRYPOINT []
+EOF

@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+exec docker run \
+  --user $(id -u):$(id -g) \
+  --volume "$PWD":/opt/pwd \
+  --workdir /opt/pwd \
+  --interactive \
+  --tty \
+  --rm \
+  bsnode $@
