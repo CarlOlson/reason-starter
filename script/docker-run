@@ -11,4 +11,5 @@ exec docker run \
   --interactive \
   --tty \
   --rm \
+  --network=host \
   bsnode $@
